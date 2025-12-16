@@ -9,21 +9,46 @@
 
 <body>
     <script>
+        // localStorage/sessionStorage
+        // 格式 key:value (string)
+        // localStorage.setItem("lastname", "Smith");//新增資料
+        // localStorage.getItem("lastname");//取得資料
+        // localStorage.removeItem("lastname");//刪除資料
+
+        // sessionStorage.setItem("lastname", "Smith");//新增資料
+        // sessionStorage.getItem("lastname");//取得資料
+        // sessionStorage.removeItem("lastname");//刪除資料
         // 物件 / 陣列 差異性
 
+        // 物件與陣列都有key:value的結構
 
+        // 物件 -> 花括號
         let user = {
-            name: "Cameon",
-            age: 23
-        }
+            name: "John",
+            age: 30
+        };
+        // key -> 可以自由定義
+        user.name; // "John"
+        user["age"];
+        console.log(JSON.stringify(user));
+        console.log(JSON.parse(JSON.stringify(user)));
+
+        // 陣列 -> 中括號
+        let fruits = [{ 人的配件 }, { 人的配件 }, { 人的配件 }, { 人的配件 }, { 人的配件 }];
+        // key -> 從0開始一直到無限大
+        fruits[0]; // "apple"
+        fruits[1]; // "banana"
+        console.log(JSON.stringify(fruits));
+        console.log(JSON.parse(JSON.stringify(fruits)));
+
+        // 物件與陣列進階的功能 -> sort / filter / map / reduce ...
+
+        // 1.localStorage/sessionStorage 只能夠存字串，如果想要儲存非字串的內容，需要轉換成字串
         console.log(JSON.stringify(user));
         console.log(user);
-        localStorage.setItem("lastname", JSON.stringify(user)); //新增資料
+        localStorage.setItem("lastname", JSON.stringify(user));//新增資料
         let a = localStorage.getItem("lastname");//取得資料
-        console.log('轉換結果' , JSON.parse(a));
-
-
-        // localStorage.setItem("username", "Cameron");
+        console.log('轉換結果', JSON.parse(a));//字串轉物件
     </script>
 </body>
 
