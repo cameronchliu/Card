@@ -9,7 +9,21 @@
 
 <body>
     <script>
-        localStorage.setItem("username", "Cameron");
+        // 物件 / 陣列 差異性
+
+
+        let user = {
+            name: "Cameon",
+            age: 23
+        }
+        console.log(JSON.stringify(user));
+        console.log(user);
+        localStorage.setItem("lastname", JSON.stringify(user)); //新增資料
+        let a = localStorage.getItem("lastname");//取得資料
+        console.log('轉換結果' , JSON.parse(a));
+
+
+        // localStorage.setItem("username", "Cameron");
     </script>
 </body>
 
