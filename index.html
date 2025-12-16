@@ -7,107 +7,131 @@
   <title>Bootstrap demo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <style>
 
-    body {
-      font-family: 'Noto Sans TC', sans-serif;
-      background-color: #F7F5F0;
-    }
+    <style>
+        /* ------------------------------------------
+        🎨 Sunday Quiet - 顏色 & 字體統一說明
+       ------------------------------------------
+       主背景：#F7F5F0（Cream）
+       Nav背景：#FDFDFC（Light Cream）
+       主字色：#4A4A4A 深灰
+       次字色：#A09486 奶茶灰
+       重點字：#4A3F35 咖啡深色
 
-    /* 色票 */
-    .text-main {
-      color: #4A4A4A;
-    }
+       邊框：
+       - 奶油灰 #C9C1B5
+       - 柔灰   #D6CEC3
 
-    .text-sub {
-      color: #A09486;
-    }
+       按鈕：
+       - 主按鈕底：#F2EEE9
+       - hover：#E8E2D8
+    -------------------------------------------*/
 
-    .text-warm {
-      color: #4A3F35;
-    }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #F7F5F0;
+        }
 
-    .bg-lightcream {
-      background-color: #FDFDFC;
-    }
+        /* 色票 */
+        .text-main {
+            color: #4A4A4A;
+        }
 
-    .border-cream {
-      border-color: #C9C1B5;
-    }
+        .text-sub {
+            color: #A09486;
+        }
 
-    .border-soft {
-      border-color: #D6CEC3;
-    }
+        .text-warm {
+            color: #4A3F35;
+        }
 
-    .bg-btn {
-      background-color: #F2EEE9;
-    }
+        .bg-lightcream {
+            background-color: #FDFDFC;
+        }
 
-    .bg-btn-hover:hover {
-      background-color: #E8E2D8 !important;
-    }
+        .border-cream {
+            border-color: #C9C1B5;
+        }
 
-    /* 字級 */
-    .text-xs {
-      font-size: 11px;
-    }
+        .border-soft {
+            border-color: #D6CEC3;
+        }
 
-    .text-sm {
-      font-size: 14px;
-    }
+        .bg-btn {
+            background-color: #F2EEE9;
+        }
 
-    .text-md {
-      font-size: 16px;
-    }
+        .bg-btn-hover:hover {
+            background-color: #E8E2D8 !important;
+        }
 
-    /* 小圖片 */
-    .circle {
-      width: 75px;
-      height: 75px;
-    }
+        /* 字級 */
+        .text-xs {
+            font-size: 11px;
+        }
 
-    img {
-      background-size: cover;
-    }
+        .text-sm {
+            font-size: 14px;
+        }
 
-    .dropdown-toggle::after {
-      display: none;
-    }
+        .text-md {
+            font-size: 16px;
+        }
 
-    .dropdown-menu[data-bs-popper] {
-      left: -130px;
-    }
+        /* 小圖片 */
+        .circle {
+            width: 75px;
+            height: 75px;
+        }
 
-    nav.navbar {
-      background-color: #F7F5F0;
-      font-size: 18px;
-    }
+        /* 下拉箭頭移除 */
+        .dropdown-toggle::after {
+            display: none;
+        }
 
-    ul.navbar-nav li.nav-item a {
-      color: #4A4A4A;
-    }
+        /* 下拉選單位置修正 */
+        .dropdown-menu[data-bs-popper] {
+            left: -130px;
+        }
 
-    ul.navbar-nav li.nav-item a:hover {
-      color: #A09486;
-    }
+        /* nav 字體顏色 */
+        .nav-link {
+            color: #4A4A4A;
+        }
 
-    /* =========================================== */
+        .nav-link:hover {
+            color: #A09486;
+        }
 
-    footer a {
-      text-decoration: none;
-      color: inherit;
-      font-size: 13.5px;
-    }
+        /* input-group 統一顏色 */
+        .input-group .btn,
+        .input-group .form-control {
+            border-color: #C9C1B5;
+        }
 
-    footer a:hover {
-      text-decoration: underline;
-      color: #A09486;
-    }
+        .input-group .btn:hover {
+            background-color: #E8E2D8;
+        }
 
-    footer p {
-      margin: 0;
-    }
-  </style>
+        /* =========================================== */
+
+        footer a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 13.5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #A09486;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* =========================================== */
+    </style>
 </head>
 
 <body>
