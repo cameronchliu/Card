@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sunday Quiet | Shopping Cart</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- 字體：降低雜亂感、變簡潔 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ------------------------------------------
+        🎨 Sunday Quiet - 顏色 & 字體統一說明
+       ------------------------------------------
+       主背景：#F7F5F0（Cream）
+       Nav背景：#FDFDFC（Light Cream）
+       主字色：#4A4A4A 深灰
+       次字色：#A09486 奶茶灰
+       重點字：#4A3F35 咖啡深色
+
+       邊框：
+       - 奶油灰 #C9C1B5
+       - 柔灰   #D6CEC3
+
+       按鈕：
+       - 主按鈕底：#F2EEE9
+       - hover：#E8E2D8
+    -------------------------------------------*/
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #F7F5F0;
+        }
+
+        /* 色票 */
+        .text-main {
+            color: #4A4A4A;
+        }
+
+        .text-sub {
+            color: #A09486;
+        }
+
+        .text-warm {
+            color: #4A3F35;
+        }
+
+        .bg-lightcream {
+            background-color: #FDFDFC;
+        }
+
+        .border-cream {
+            border-color: #C9C1B5;
+        }
+
+        .border-soft {
+            border-color: #D6CEC3;
+        }
+
+        .bg-btn {
+            background-color: #F2EEE9;
+        }
+
+        .bg-btn-hover:hover {
+            background-color: #E8E2D8 !important;
+        }
+
+        /* 字級 */
+        .text-xs {
+            font-size: 11px;
+        }
+
+        .text-sm {
+            font-size: 14px;
+        }
+
+        .text-md {
+            font-size: 16px;
+        }
+
+        /* 小圖片 */
+        .circle {
+            width: 75px;
+            height: 75px;
+        }
+
+        /* 下拉箭頭移除 */
+        .dropdown-toggle::after {
+            display: none;
+        }
+
+        /* 下拉選單位置修正 */
+        .dropdown-menu[data-bs-popper] {
+            left: -130px;
+        }
+
+        /* nav 字體顏色 */
+        .nav-link {
+            color: #4A4A4A;
+        }
+
+        .nav-link:hover {
+            color: #A09486;
+        }
+
+        /* input-group 統一顏色 */
+        .input-group .btn,
+        .input-group .form-control {
+            border-color: #C9C1B5;
+        }
+
+        .input-group .btn:hover {
+            background-color: #E8E2D8;
+        }
+
+        /* =========================================== */
+
+        footer a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 13.5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #A09486;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* =========================================== */
+    </style>
+</head>
+
+<body>
+    <!-- 🔹 NAV 導覽列 -->
+    <nav class="navbar navbar-expand-lg bg-lightcream">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./img/logo.png" alt="Bootstrap" width="60" height="60">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-main">
+                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link"><i class="bi bi-cart4"></i></a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Login</a></li>
+                            <li><a class="dropdown-item" href="#">Sign up</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Help</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 🔸 MAIN -->
+    <main class="container bg-light px-5 px-sm-4 px-md-5 my-4 shadow rounded">
+        <!-- 🧾 訂單明細 -->
+        <section>
+            <hr>
+            <h4 class="fw-bold mb-4">訂單明細</h4>
+            <!-- 🔸 商品列表 -->
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-3 gap-md-5">
+                    <img class="circle rounded-circle" src="./img/CitrusDawn.png">
+                    <div>
+                        <div class="fw-semibold text-main mb-1">柑橘晨光 Citrus Dawn</div>
+                        <small class="text-sub">香調：<span class="fst-italic">柑橘 / 葡萄柚 / 白花</span></small>
+                        <div class="text-xs text-sub">容量：200g</div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div class="input-group mx-3" style="width:120px;">
+                        <button class="btn">-</button>
+                        <input type="text" class="form-control text-center" value="1">
+                        <button class="btn">+</button>
+                    </div>
+                    <div class="text-main">💲320</div>
+                </div>
+            </div>
+            <hr>
+            <!-- 商品2 -->
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-3 gap-md-5">
+                    <img class="circle rounded-circle" src="./img/SeaBreeze.png">
+                    <div>
+                        <div class="fw-semibold text-main mb-1">湖岸海鹽 Sea Breeze</div>
+                        <small class="text-sub">香調：<span class="fst-italic">海鹽 / 迷迭香 / 白松木</span></small>
+                        <div class="text-xs text-sub">容量：200g</div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div class="input-group mx-3" style="width:120px;">
+                        <button class="btn">-</button>
+                        <input type="text" class="form-control text-center" value="1">
+                        <button class="btn">+</button>
+                    </div>
+                    <div class="text-main">💲550</div>
+                </div>
+            </div>
+            <hr>
+            <!-- 商品3 -->
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-3 gap-md-5">
+                    <img class="circle rounded-circle" src="./img/WarmCedar.png">
+                    <div>
+                        <div class="fw-semibold text-main mb-1">木質溫室 Warm Cedar</div>
+                        <small class="text-sub">香調：<span class="fst-italic">雪松木 / 琥珀 / 香根草</span></small>
+                        <div class="text-xs text-sub">容量：200g</div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div class="input-group mx-3" style="width:120px;">
+                        <button class="btn">-</button>
+                        <input type="text" class="form-control text-center" value="1">
+                        <button class="btn">+</button>
+                    </div>
+                    <div class="text-main">💲580</div>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <!-- 🧾 金額計算 Summary -->
+        <section class="d-flex justify-content-end pe-2">
+            <div class="p-3 rounded-3 shadow-sm bg-white" style="width: 300px;">
+                <table class="table table-borderless table-sm mb-0">
+                    <tbody class="text-sm">
+                        <tr>
+                            <th class="text-sub fw-light">數量：</th>
+                            <td class="text-end">3</td>
+                        </tr>
+                        <tr>
+                            <th class="text-sub fw-light">小記：</th>
+                            <td class="text-end">$1,450</td>
+                        </tr>
+                        <tr>
+                            <th class="text-sub fw-light">運費：</th>
+                            <td class="text-end">$60</td>
+                        </tr>
+                        <tr>
+                            <th class="text-sub fw-light">總計：</th>
+                            <td class="text-end fw-bold">$1,510</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <hr class="p-0 mb-0">
+        <!-- ◻️ 最底部：返回 + 下一步 -->
+        <section class="d-flex justify-content-between align-items-center py-5">
+            <a href="#" class="text-decoration-none text-sub d-flex align-items-center gap-1">
+                <i class="bi bi-chevron-left"></i>
+                返回購物
+            </a>
+
+            <a href="./cart-02.html" class="btn fw-semibold px-4 py-2 border-soft bg-btn bg-btn-hover text-warm">
+                下一步
+            </a>
+        </section>
+    </main>
+
+    <!-- 🔻 FOOTER -->
+    <footer class="w-100 bg-lightcream">
+        <div class="row justify-content-md-center align-items-start text-center text-lg-start p-5">
+            <!-- 🔸左側 Logo + 文案 -->
+            <div class="col-12 col-md-12 col-lg-4 mb-4 mb-lg-0">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="./img/logo.png" alt="Bootstrap" width="40" height="40">
+                    <span class="ms-2 fw-semibold"> Sunset Quite</span>
+                </div>
+                <p class="text-center mx-auto my-2" style="max-width: 260px;">
+                    <small>Soft light, quiet breath, slower living.</small><br>
+                    <small>Scented moments for a calmer day.</small>
+                </p>
+            </div>
+            <!-- 🔸欄位 1 -->
+            <div class="col-12 col-md-4 col-lg-2 px-0 px-md-2 px-xl-5 fw-normal mb-4 mb-lg-0">
+                <div class="mb-2 fw-light">商品分類</div>
+                <p><a href="#">經典香氛蠟燭</a></p>
+                <p><a href="#">居家擴香</a></p>
+                <p><a href="#">禮盒組</a></p>
+            </div>
+            <!-- 🔸欄位 2 -->
+            <div class="col-12 col-md-4 col-lg-2 px-0 px-md-2 px-xl-5 fw-normal mb-4 mb-lg-0">
+                <div class="mb-2 fw-light">關於品牌</div>
+                <p><a href="#">品牌故事</a></p>
+                <p><a href="#">製作工藝</a></p>
+                <p><a href="#">永續承諾</a></p>
+            </div>
+            <!-- 🔸欄位 3 -->
+            <div class="col-12 col-md-4 col-lg-2 px-0 px-md-2 px-xl-5 fw-normal mb-4 mb-lg-0">
+                <div class="mb-2 fw-light">客戶支援</div>
+                <p><a href="#">運送方式</a></p>
+                <p><a href="#">退換貨政策</a></p>
+                <p><a href="#">訂單查詢</a></p>
+                <p><a href="#">聯絡我們</a></p>
+            </div>
+            <!-- 🔸欄位 4 -->
+            <div class="col-12 col-md-4 col-lg-2 px-0 px-md-2 px-xl-5 fw-normal mb-4 mb-lg-0">
+                <div class="mb-2 fw-light">靈感與內容</div>
+                <p><a href="#">香調指南</a></p>
+                <p><a href="#">節日推薦</a></p>
+                <p><a href="#">最新文章</a></p>
+            </div>
+        </div>
+        <!-- 🐈‍⬛ 商標 -->
+        <div class="d-flex justify-content-between px-3">
+            <small class="text-xs">Copyright © 2025 SundayQuite Company</small>
+            <div>
+                <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-threads"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
